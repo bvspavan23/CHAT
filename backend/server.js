@@ -20,12 +20,13 @@ const io = socketio(server, {
     methods: ["GET", "POST","PUT","DELETE"],
     credentials: true,
     transports: ["websocket"],
-    allowedHeaders: ["socketid"]
+    allowedHeaders: ["Content-Type", "Authorization","socketid"]
   },
 });
 app.use(cors({
   origin: ["https://gossipp.vercel.app"],
   methods: ["GET", "POST","PUT","DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization","socketid"],
   credentials: true
 }));
 
